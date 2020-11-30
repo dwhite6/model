@@ -1,5 +1,0 @@
-/Users/deonante/Source/Repos/mis321-project/obj/Debug/netcoreapp3.1/mis321-project.csprojAssemblyReference.cache
-/Users/deonante/Source/Repos/mis321-project/obj/Debug/netcoreapp3.1/mis321-project.AssemblyInfoInputs.cache
-/Users/deonante/Source/Repos/mis321-project/obj/Debug/netcoreapp3.1/mis321-project.AssemblyInfo.cs
-/Users/deonante/Source/Repos/mis321-project/obj/Debug/netcoreapp3.1/mis321-project.csproj.CoreCompileInputs.cache
-/Users/deonante/Source/Repos/mis321-project/obj/Debug/netcoreapp3.1/mis321-project.MvcApplicationPartsAssemblyInfo.cache
