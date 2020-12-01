@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,6 +13,7 @@ namespace mis321_project.Controllers
     public class empolyeesController : ControllerBase
     {
         // GET: api/empolyees
+        [EnableCors("Another policy")]
         [HttpGet]
         public IEnumerable<string> Get()
         {
@@ -19,6 +21,7 @@ namespace mis321_project.Controllers
         }
 
         // GET: api/empolyees/5
+        [EnableCors("Another policy")]
         [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
@@ -26,18 +29,21 @@ namespace mis321_project.Controllers
         }
 
         // POST: api/empolyees
+        [EnableCors("Another policy")]
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
         // PUT: api/empolyees/5
+        [EnableCors("Another policy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/ApiWithActions/5
+        [EnableCors("Another policy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
