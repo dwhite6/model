@@ -1,8 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/Users/deonante/.dotnet/store/|arch|/|tfm|",
-      "/Users/deonante/.nuget/packages"
+      "C:\\Users\\talma\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\talma\\.nuget\\packages"
     ]
   }
 }
