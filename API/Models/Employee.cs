@@ -6,6 +6,7 @@ namespace API.Models
         public string employeeFName {get; set;}
         public string employeeLName {get; set;}
         public string employeeStatus {get; set;}
+        public static int employeeId = 0;
         
     }
 }
