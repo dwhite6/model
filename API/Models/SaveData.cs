@@ -5,62 +5,93 @@ using System.Data.SQLite;
 
 namespace mis321_project.Models
 {
-    public class SaveData : ISeedData, ISaveData
-    //:IReadAllData, IGetEmployee 
+    public class SaveData : ISeedData
     {
-        public void SaveEmployee(Post text)
+       public void SeedData()
         {
-            string cs = @"URI=file:C:\Users\talma\source\repos\pa4-talmartin-1\employee.db";
+            string cs = @"URI=file:/Users/austinferrier/Documents/repos/mis321-project/emp.db";
             using var con = new SQLiteConnection(cs);
             con.Open();
 
             using var cmd = new SQLiteCommand(con);
 
-            // cmd.CommandText = @"INSERT INTO post(text, date) VALUES(@text, @date)";
-            // cmd.Parameters.AddWithValue("@text", text.text);
-            // DateTime time = DateTime.Now;
-            // cmd.Parameters.AddWithValue("@date", time);
-            // cmd.Prepare();
-            // cmd.ExecuteNonQuery();
-
-        }
-
-        public void SeedData()
-        {
-            string cs = @"URI=file:C:\Users\talma\source\repos\pa4-talmartin-1\employee.db";
-            using var con = new SQLiteConnection(cs);
-            con.Open();
-
-            using var cmd = new SQLiteCommand(con);
-
-            //Drop table if it exist
-            cmd.CommandText = "DROP TABLE IF EXISTS post";
+            cmd.CommandText = "DROP TABLE IF EXISTS employee";
             cmd.ExecuteNonQuery();
 
-            //Create table
-           cmd.CommandText = @"CREATE TABLE post(id INTEGER PRIMARY KEY, text TEXT, date DATETIME)";
-           cmd.ExecuteNonQuery();
+            cmd.CommandText = @"CREATE TABLE employee(id INTEGER PRIMARY KEY, empFName TEXT, empLName TEXT, empStatus TEXT, overallScore INTEGER, performanceScore INTEGER, leadershipScore INTEGER)";
+            cmd.ExecuteNonQuery();
 
-           //Populate table
-        //    cmd.CommandText = @"INSERT INTO post(text, date) VALUES(@text, @date)";
-        //    cmd.Parameters.AddWithValue("@text", "Let's go Bama!");
-        //    cmd.Parameters.AddWithValue("@date", DateTime.Now);
-        //    cmd.Prepare();
-        //    cmd.ExecuteNonQuery();
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "James");
+            cmd.Parameters.AddWithValue("@empLName", "Clark");
+            cmd.Parameters.AddWithValue("@empStatus", "E");
+            cmd.Parameters.AddWithValue("@overallScore", "48");
+            cmd.Parameters.AddWithValue("@performanceScore", "28");
+            cmd.Parameters.AddWithValue("@leadershipScore", "20");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
 
-        //    cmd.CommandText = @"INSERT INTO post(text, date) VALUES(@text, @date)";
-        //    cmd.Parameters.AddWithValue("@text", "The Tide!");
-        //    cmd.Parameters.AddWithValue("@date", DateTime.Now);
-        //    cmd.Prepare();
-        //    cmd.ExecuteNonQuery();
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "David");
+            cmd.Parameters.AddWithValue("@empLName", "Winters");
+            cmd.Parameters.AddWithValue("@empStatus", "E");
+            cmd.Parameters.AddWithValue("@overallScore", "50");
+            cmd.Parameters.AddWithValue("@performanceScore", "24");
+            cmd.Parameters.AddWithValue("@leadershipScore", "26");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
 
-        //    cmd.CommandText = @"INSERT INTO post(text, date) VALUES(@text, @date)";
-        //    cmd.Parameters.AddWithValue("@text", "Roll Tide!!!");
-        //    cmd.Parameters.AddWithValue("@date", DateTime.Now);
-        //    cmd.Prepare();
-        //    cmd.ExecuteNonQuery();
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "Aaron");
+            cmd.Parameters.AddWithValue("@empLName", "Rodgers");
+            cmd.Parameters.AddWithValue("@empStatus", "M");
+            cmd.Parameters.AddWithValue("@overallScore", "55");
+            cmd.Parameters.AddWithValue("@performanceScore", "27");
+            cmd.Parameters.AddWithValue("@leadershipScore", "28");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
 
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "Carl");
+            cmd.Parameters.AddWithValue("@empLName", "Flannigan");
+            cmd.Parameters.AddWithValue("@empStatus", "E");
+            cmd.Parameters.AddWithValue("@overallScore", "23");
+            cmd.Parameters.AddWithValue("@performanceScore", "10");
+            cmd.Parameters.AddWithValue("@leadershipScore", "13");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
 
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "Chang");
+            cmd.Parameters.AddWithValue("@empLName", "Helkingsman");
+            cmd.Parameters.AddWithValue("@empStatus", "M");
+            cmd.Parameters.AddWithValue("@overallScore", "35");
+            cmd.Parameters.AddWithValue("@performanceScore", "10");
+            cmd.Parameters.AddWithValue("@leadershipScore", "25");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "Max");
+            cmd.Parameters.AddWithValue("@empLName", "Verstapan");
+            cmd.Parameters.AddWithValue("@empStatus", "A");
+            cmd.Parameters.AddWithValue("@overallScore", "58");
+            cmd.Parameters.AddWithValue("@performanceScore", "28");
+            cmd.Parameters.AddWithValue("@leadershipScore", "30");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", "Terry");
+            cmd.Parameters.AddWithValue("@empLName", "McDonald");
+            cmd.Parameters.AddWithValue("@empStatus", "E");
+            cmd.Parameters.AddWithValue("@overallScore", "33");
+            cmd.Parameters.AddWithValue("@performanceScore", "15");
+            cmd.Parameters.AddWithValue("@leadershipScore", "18");
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+
+            
 
         }
     }

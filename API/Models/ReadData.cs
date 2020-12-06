@@ -11,7 +11,7 @@ namespace API.Models
         {
             List<Employee> allEmployees = new List<Employee>();
 
-            string cs = @"URI=file:C:\Users\talma\source\repos\pa4-talmartin-1\employee.db";
+            string cs = @"URI=file:C:\Users\austinferrier\Documents\repos\mis321-project\emp.db";
             using var con = new SQLiteConnection(cs);
             con.Open();
 
@@ -31,7 +31,7 @@ namespace API.Models
 
         public Employee GetEmployee(int id)
         {
-            string cs = @"URI=file:C:\Users\talma\source\repos\pa4-talmartin-1\employee.db";
+            string cs = @"URI=file:C:\Users\austinferrier\Documents\repos\mis321-project\emp.db";
             using var con = new SQLiteConnection(cs);
             con.Open();
 

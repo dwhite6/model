@@ -6500,26 +6500,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\talma\\.nuget\\packages\\": {}
+    "/Users/austinferrier/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\talma\\source\\repos\\mis321-project\\API\\mis321-project.csproj",
+      "projectUniqueName": "/Users/austinferrier/Documents/repos/mis321-project/API/mis321-project.csproj",
       "projectName": "mis321-project",
-      "projectPath": "C:\\Users\\talma\\source\\repos\\mis321-project\\API\\mis321-project.csproj",
-      "packagesPath": "C:\\Users\\talma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\talma\\source\\repos\\mis321-project\\API\\obj\\",
+      "projectPath": "/Users/austinferrier/Documents/repos/mis321-project/API/mis321-project.csproj",
+      "packagesPath": "/Users/austinferrier/.nuget/packages/",
+      "outputPath": "/Users/austinferrier/Documents/repos/mis321-project/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\talma\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/austinferrier/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6567,7 +6565,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.401/RuntimeIdentifierGraph.json"
       }
     }
   }
