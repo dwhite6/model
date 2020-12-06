@@ -16,7 +16,7 @@ namespace API.Controllers
     public class empolyeesController : ControllerBase
     {
         // GET: api/empolyees
-        [EnableCors("Another policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpGet]
         public List<Employee> Get()
         {
@@ -25,7 +25,7 @@ namespace API.Controllers
         }
 
         // GET: api/empolyees/5
-        [EnableCors("Another policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpGet("{id}", Name = "Get")]
         public Employee Get(int id)
         {
@@ -34,7 +34,7 @@ namespace API.Controllers
         }
 
         // POST: api/empolyees
-        [EnableCors("Another policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpPost]
         public void Post([FromBody] Employee value)
         {
@@ -43,14 +43,14 @@ namespace API.Controllers
         }
 
         // PUT: api/empolyees/5
-        [EnableCors("Another policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
         // DELETE: api/ApiWithActions/5
-        [EnableCors("Another policy")]
+        [EnableCors("AnotherPolicy")]
         [HttpDelete("{id}")]
         public void Delete(int id)
         {

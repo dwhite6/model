@@ -16,8 +16,8 @@ namespace mis321_project
     {
         public static void Main(string[] args)
         {
-            ISeedData saveObject = new SaveData();
-            saveObject.SeedData();
+            //ISeedData saveObject = new SaveData();
+            //saveObject.SeedData();
             
             CreateHostBuilder(args).Build().Run();
         }
