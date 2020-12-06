@@ -1,15 +1,51 @@
+using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using System;
 using System.Collections.Generic;
 using API.Models.Interfaces;
 using System.Data.SQLite;
 
-namespace mis321_project.Models
+namespace API.Models
 {
-    public class SaveData : ISeedData
+    public class SaveData : ISeedData, ISaveData
     {
+        public void SaveEmployee(Employee value)
+        {
+            string cs = @"URI=file:C:\Users\talma\source\repos\mis321-project\emp.db";
+            using var con = new SQLiteConnection(cs);
+            con.Open();
+
+            using var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = @"INSERT INTO employee(empFName, empLName, empStatus, overallScore, performanceScore, leadershipScore) VALUES(@empFName, @empLName, @empStatus, @overallScore, @performanceScore, @leadershipScore)";
+            cmd.Parameters.AddWithValue("@empFName", value.employeeFName);
+            cmd.Parameters.AddWithValue("@empLName", value.employeeLName);
+            cmd.Parameters.AddWithValue("@empStatus", value.employeeStatus);
+            cmd.Parameters.AddWithValue("@overallScore", value.overallScore);
+            cmd.Parameters.AddWithValue("@performanceScore", value.performanceScore);
+            cmd.Parameters.AddWithValue("@leadershipScore", value.leadershipScore);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            string cs = @"URI=file:C:\Users\talma\source\repos\mis321-project\emp.db";
+            using var con = new SQLiteConnection(cs);
+            con.Open();
+
+            using var cmd = new SQLiteCommand(con);
+
+            cmd.CommandText = @"DELETE FROM emp WHERE id = @id";
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Prepare();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine(id);
+        }
+
        public void SeedData()
         {
-            string cs = @"URI=file:/Users/austinferrier/Documents/repos/mis321-project/emp.db";
+            string cs = @"URI=file:C:\Users\talma\source\repos\mis321-project\emp.db";
             using var con = new SQLiteConnection(cs);
             con.Open();
 
@@ -90,8 +126,6 @@ namespace mis321_project.Models
             cmd.Parameters.AddWithValue("@leadershipScore", "18");
             cmd.Prepare();
             cmd.ExecuteNonQuery();
-
-            
 
         }
     }

@@ -1,3 +1,4 @@
+using System.Security.AccessControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,8 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using API.Models.Interfaces;
+using API.Models;
 
-namespace mis321_project.Controllers
+namespace API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -15,24 +18,28 @@ namespace mis321_project.Controllers
         // GET: api/empolyees
         [EnableCors("Another policy")]
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Employee> Get()
         {
-            return new string[] { "value1", "value2" };
+            IReadAllData readObject = new ReadData();
+            return readObject.GetAllEmployees();
         }
 
         // GET: api/empolyees/5
         [EnableCors("Another policy")]
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Employee Get(int id)
         {
-            return "value";
+            IGetEmployee readObject = new ReadData();
+            return readObject.GetEmployee(id);
         }
 
         // POST: api/empolyees
         [EnableCors("Another policy")]
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Employee value)
         {
+            ISaveData insertObject = new SaveData();
+            insertObject.SaveEmployee(value);
         }
 
         // PUT: api/empolyees/5
@@ -47,6 +54,8 @@ namespace mis321_project.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            ISaveData insertObject = new SaveData();
+            insertObject.DeleteEmployee(id);
         }
     }
 }

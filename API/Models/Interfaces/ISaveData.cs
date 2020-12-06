@@ -1,11 +1,9 @@
-namespace mis321_project.Models.Interfaces
+namespace API.Models.Interfaces
 {
     public interface ISaveData
     {
-        public interface ISaveData
-    {
-        public void SaveEmployee();
-        
-    }
+        public void SaveEmployee(Employee value);
+
+        public void DeleteEmployee(int id);
     }
 }

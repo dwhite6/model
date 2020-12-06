@@ -1,4 +1,4 @@
-namespace mis321_project.Models.Interfaces
+namespace API.Models.Interfaces
 {
     public interface ISeedData
     {
