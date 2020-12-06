@@ -36,7 +36,7 @@ namespace API.Models
 
             using var cmd = new SQLiteCommand(con);
 
-            cmd.CommandText = @"DELETE FROM emp WHERE id = @id";
+            cmd.CommandText = @"DELETE FROM employee WHERE id = @id";
             cmd.Parameters.AddWithValue("@id", id);
             cmd.Prepare();
             cmd.ExecuteNonQuery();
