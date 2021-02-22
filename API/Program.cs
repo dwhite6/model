@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 using API.Models;
 using API.Models.Interfaces;
 
-namespace mis321_project
+namespace model
 {
     public class Program
     {
